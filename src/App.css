@@ -1,10 +1,27 @@
 
 form {
-    background-color: rgb(255, 0, 140);
+    background-color: rgb(110, 122, 233);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 450px;
+    height: 250px;
     margin: 20px;
+    text-align: center;
 }
 
 label {
     display: block;
+}
+
+input {
+    margin: 10px;
+}
+
+form h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0 10px 0 10px;
 }
 

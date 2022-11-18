@@ -4,16 +4,18 @@ import './App.css';
 class App extends React.Component {
   state = { 
     username : '' ,
-    email : ''
+    email : '',
+    trip : '' ,
     } 
 
    handleOnChange = (e) => {
     console.log(e.target.type);
 
-
+  const name = e.target.name ;
   const value = e.target.value;
   this.setState( {
-    username : value ,
+    [name] : value 
+    
   } )
    }
 
@@ -23,7 +25,9 @@ class App extends React.Component {
   render() { 
     return (
      <div className='App'>
+     
        <form>
+       <h1> Formularz kontaktowy</h1>
         <label htmlFor='user'> 
           Twoje imie
           <input 
@@ -41,7 +45,7 @@ class App extends React.Component {
           type="email" 
           id="email" 
           name="email" 
-          value={this.state.username}
+          value={this.state.mail}
           onChange={this.handleOnChange}
           ></input>
         </label>
@@ -52,10 +56,23 @@ class App extends React.Component {
           type="text" 
           id="trip" 
           name="trip" 
-          value={this.state.username}
+          value={this.state.trip}
           onChange={this.handleOnChange}
           ></input>
         </label>
+
+        <label htmlFor='message'> 
+          Wiadomosc
+          <input 
+          type="textarea" 
+          id="message" 
+          name="message" 
+          value={this.state.message}
+          onChange={this.handleOnChange}
+          ></input>
+        </label>
+
+        
 
        </form>
      </div>
