@@ -11,7 +11,11 @@ class App extends React.Component {
 
    handleOnChange = (e) => {
     console.log(e.target.type);
+  const type = e.target.type;
 
+
+  if(type === "text" || type === "email"  || type === "trip" || type ==="message" ){
+  console.log(type)
   const name = e.target.name ;
   const value = e.target.value;
   this.setState( {
@@ -19,6 +23,8 @@ class App extends React.Component {
   
   } )
    }
+  
+  }
 
    handleSubmit = (e) => {
     e.preventDefault() 
@@ -67,8 +73,9 @@ class App extends React.Component {
           ></input>
         </label>
 
+         <h2> Wiadomosc</h2>
         <label htmlFor='message'> 
-          Wiadomosc
+          
           <textarea
           type="text"
           name="message"
