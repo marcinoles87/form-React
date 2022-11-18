@@ -6,6 +6,7 @@ class App extends React.Component {
     username : '' ,
     email : '',
     trip : '' ,
+    message : '' ,
     } 
 
    handleOnChange = (e) => {
@@ -14,9 +15,14 @@ class App extends React.Component {
   const name = e.target.name ;
   const value = e.target.value;
   this.setState( {
-    [name] : value 
-    
+    [name] : value  ,
+  
   } )
+   }
+
+   handleSubmit = (e) => {
+    e.preventDefault() 
+    console.log("dziala");
    }
 
   
@@ -26,7 +32,7 @@ class App extends React.Component {
     return (
      <div className='App'>
      
-       <form>
+       <form onSubmit={this.handleSubmit}>
        <h1> Formularz kontaktowy</h1>
         <label htmlFor='user'> 
           Twoje imie
@@ -63,16 +69,22 @@ class App extends React.Component {
 
         <label htmlFor='message'> 
           Wiadomosc
-          <input 
-          type="textarea" 
-          id="message" 
-          name="message" 
+          <textarea
+          type="text"
+          name="message"
+          id="message"
+          value ="message"
+          placeholder="end me a message"
           value={this.state.message}
           onChange={this.handleOnChange}
-          ></input>
+          >
+
+          </textarea>
+
+          
         </label>
 
-        
+        <button>Zapisz sie </button>
 
        </form>
      </div>
