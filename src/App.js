@@ -11,15 +11,21 @@ class App extends React.Component {
 
    handleOnChange = (e) => {
     console.log(e.target.type);
+    
   const type = e.target.type;
+  const value2 = e.target.value;
 
+  
+console.log(value2)
 
   if(type === "text" || type === "email"  || type === "trip" || type ==="message" ){
   console.log(type)
   const name = e.target.name ;
   const value = e.target.value;
+  
   this.setState( {
     [name] : value  ,
+    message : value2 ,
   
   } )
    }
@@ -29,6 +35,7 @@ class App extends React.Component {
    handleSubmit = (e) => {
     e.preventDefault() 
     console.log("dziala");
+    
    }
 
   
@@ -80,9 +87,9 @@ class App extends React.Component {
           type="text"
           name="message"
           id="message"
-          value ="message"
+          
           placeholder="end me a message"
-          value={this.state.message}
+          value2={this.state.message}
           onChange={this.handleOnChange}
           >
 
