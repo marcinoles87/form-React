@@ -11,9 +11,9 @@ class App extends React.Component {
     
     errors : {
 
-    username : true ,
-    email : false,
-    trip : false ,
+    username :false ,
+    email :false,
+    trip :false ,
     message : false ,
 
     }
@@ -74,11 +74,11 @@ console.log(value2)
           >
 
           </input>
-          <span>{this.state.errors.username && <span>{this.message.username_incorrect}</span>}</span>
+          {this.state.errors.username && <span>{this.message.username_incorrect}</span>}
         </label>
 
         <label htmlFor='email'> 
-          Twoj adres e-mail :
+          Twoj e-mail :
           <input 
           type="email" 
           id="email" 
@@ -86,10 +86,11 @@ console.log(value2)
           value={this.state.mail}
           onChange={this.handleOnChange}
           ></input>
+          {this.state.errors.email && <span>{this.message.email_incorrect}</span>}
         </label>
 
         <label htmlFor='trip'> 
-          Wybierz wycieczke :
+          Twoja wycieczka :
           <input 
           type="text" 
           id="trip" 
@@ -97,6 +98,7 @@ console.log(value2)
           value={this.state.trip}
           onChange={this.handleOnChange}
           ></input>
+          {this.state.errors.trip && <span>{this.message.trip_incorrect}</span>}
         </label>
 
          <h2> Wiadomosc</h2>
