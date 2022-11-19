@@ -67,15 +67,25 @@ console.log(value2)
     if(this.state.trip.length > 4 ) {
       trip = true;
     }
+    if(username && email && trip ) {
+      correct = true;
+    }
+
+    return ( {
+      username,
+      email,
+      trip,
+      correct
+    })
   }
 
    handleSubmit = (e) => {
     e.preventDefault() 
 
     const validation = this.formValidation() ;
-    
+    console.log(validation)
 
-    if(true) {
+    if(validation.correct) {
       this.setState({
       
           username : '' ,
@@ -88,10 +98,10 @@ console.log(value2)
           
           errors : {
       
-          username :false ,
-          email :false,
-          trip :false ,
-          message : false ,
+            username :false ,
+            email :false,
+            trip :false ,
+            message : false ,
       
           }
       } )
@@ -99,10 +109,13 @@ console.log(value2)
       this.setState({
       errors : {
       
-        username :false ,
-        email :false,
-        trip :false ,
-        message : false ,
+        username : !validation.username,
+        email : !validation.email,
+        trip : !validation.trip ,
+        message : !validation.message ,
+
+
+       
       }
         })
     
@@ -112,7 +125,6 @@ console.log(value2)
   }
 
   
-
 
   render() { 
     return (
