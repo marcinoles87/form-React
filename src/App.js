@@ -7,6 +7,7 @@ class App extends React.Component {
     email : '',
     trip : '' ,
     message : '' ,
+    value2 : '' ,
     
     
     errors : {
@@ -50,7 +51,29 @@ console.log(value2)
 
    handleSubmit = (e) => {
     e.preventDefault() 
-    console.log("dziala");
+    
+
+    if(true) {
+      this.setState({
+      
+          username : '' ,
+          email : '',
+          trip : '' ,
+          message : '' ,
+          value2 : '' ,
+          
+          
+          
+          errors : {
+      
+          username :false ,
+          email :false,
+          trip :false ,
+          message : false ,
+      
+          }
+      } )
+    } 
     
    }
 
