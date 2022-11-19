@@ -7,7 +7,23 @@ class App extends React.Component {
     email : '',
     trip : '' ,
     message : '' ,
-    } 
+    
+    
+    errors : {
+
+    username : true ,
+    email : false,
+    trip : false ,
+    message : false ,
+
+    }
+  }
+
+    message = {
+      username_incorrect : 'Nazwa musi byc dluzsza ... ' ,
+      email_incorrect : 'brak @ w emailu',
+      trip_incorrect : ' brak wybranej wycieczki'
+    }
 
    handleOnChange = (e) => {
     console.log(e.target.type);
@@ -48,14 +64,17 @@ console.log(value2)
        <form onSubmit={this.handleSubmit}>
        <h1> Formularz kontaktowy</h1>
         <label htmlFor='user'> 
-          Twoje imie
+          Twoje imie :
           <input 
           type="text" 
           id="user" 
           name="username" 
           value={this.state.username}
           onChange={this.handleOnChange}
-          ></input>
+          >
+
+          </input>
+          <span>{this.state.errors.username && <span>{this.message.username_incorrect}</span>}</span>
         </label>
 
         <label htmlFor='email'> 
@@ -70,7 +89,7 @@ console.log(value2)
         </label>
 
         <label htmlFor='trip'> 
-          Wybierz wycieczke
+          Wybierz wycieczke :
           <input 
           type="text" 
           id="trip" 

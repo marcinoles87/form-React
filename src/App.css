@@ -1,6 +1,7 @@
 
 form {
     background-color: rgb(110, 122, 233);
+    display: block;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -13,24 +14,34 @@ form {
 
 label {
     display: block;
-    margin-left: 0;
+    width: 200px;
+    color: white;
 }
 
 input {
-    margin: 10px;
+    margin-top: 20px;
+    margin-left : 100px;
     width: 300px;
     height: 20px;
     
 }
 
-form h1 {
+form h1 , h2{
     color: white;
     font-size: 40px;
     margin: 0 10px 0 10px;
 }
 
+
+
 textarea {
+    margin-left: 100px;
     width: 300px;
     height: 200px;
+}
+
+button {
+    
+    max-width: 200px;
 }
 
