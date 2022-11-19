@@ -8,6 +8,7 @@ class App extends React.Component {
     trip : '' ,
     message : '' ,
     value2 : '' ,
+    confirm : '' ,
     
     
     errors : {
@@ -75,7 +76,7 @@ console.log(value2)
       username,
       email,
       trip,
-      correct
+      correct,
     })
   }
 
@@ -93,6 +94,7 @@ console.log(value2)
           trip : '' ,
           message : '' ,
           value2 : '' ,
+          confirm : ' Formularz wyslany ' ,
           
           
           
@@ -122,6 +124,14 @@ console.log(value2)
     
    }
 
+  }
+
+  componentDidUpdate() {
+    if(this.state.confirm !== '') {
+      setTimeout(() => this.setState({
+        confirm : '' ,
+      }) ,3000)
+    }
   }
 
   
@@ -189,6 +199,8 @@ console.log(value2)
         </label>
 
         <button>Zapisz sie </button>
+
+        {this.state.confirm && <h3>{this.state.confirm}</h3>} 
 
        </form>
      </div>
