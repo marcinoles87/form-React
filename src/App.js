@@ -49,8 +49,30 @@ console.log(value2)
   
   }
 
+  formValidation = () => {
+    let username = false;
+    let email = false;
+    let trip = false;
+    let message = false;
+    let correct = false;
+
+    if(this.state.username.length > 6 && this.state.username.indexOf(' ') === -1) {
+      username = true ;
+    }
+     
+    if(this.state.email.indexOf('@') !== -1) {
+      email = true;
+    }
+
+    if(this.state.trip.length > 4 ) {
+      trip = true;
+    }
+  }
+
    handleSubmit = (e) => {
     e.preventDefault() 
+
+    const validation = this.formValidation() ;
     
 
     if(true) {
@@ -73,9 +95,21 @@ console.log(value2)
       
           }
       } )
-    } 
+    } else {
+      this.setState({
+      errors : {
+      
+        username :false ,
+        email :false,
+        trip :false ,
+        message : false ,
+      }
+        })
+    
     
    }
+
+  }
 
   
 
